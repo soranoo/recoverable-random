@@ -27,8 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Runs build and test using the runners shell
-      - name: Build and test
-        run: |
-          npm run build
-          npm run test
+      # Runs test using the runners shell
+      - name: Test
+        run: npm run test
