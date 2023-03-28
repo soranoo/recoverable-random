@@ -15,6 +15,7 @@ A recoverable number generator that generates pseudorandom integer or floating-p
 ```bash
 npm install recoverable-random
 ```
+Visit the [npm](https://www.npmjs.com/package/recoverable-random) page.
 
 ### Import
 ```typescript
