@@ -4,6 +4,7 @@
   "description": "A recoverable number generator that generates pseudorandom integer or floating-point numbers within a given range.",
   "main": "dist/index.js",
   "type": "commonjs",
+  "keywords": ["recoverable", "random number generator", "pseudorandom", "seed", "seedable"],
   "scripts": {
     "build": "tsc",
     "test": "tsc & jest",

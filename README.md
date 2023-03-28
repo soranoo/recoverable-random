@@ -16,10 +16,21 @@ A recoverable number generator that generates pseudorandom integer or floating-p
 npm install recoverable-random
 ```
 
-### Usage ~ 🍀
+### Import
+```typescript
+// ES6
+import NumberGenerator from "recoverable-random";
+
+// CommonJS
+const NumberGenerator = require("recoverable-random").default;
+```
+
+### Usage Example~ 🍀
 ```typescript
 // import the module
-import { NumberGenerator } from "recoverable-random";
+import NumberGenerator from "recoverable-random";
+// or
+const NumberGenerator = require("recoverable-random").default;
 
 // create a generator instance
 const generator = new NumberGenerator("seed");
