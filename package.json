@@ -9,7 +9,8 @@
     "build": "tsc",
     "test": "tsc & jest",
     "dev": "tsc -w",
-    "dev:test": "tsc & jest --coverage"
+    "dev:test": "tsc & jest --coverage",
+    "pub": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
