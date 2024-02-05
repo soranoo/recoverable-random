@@ -73,6 +73,21 @@ new NumberGenerator(seed?: number | string)
 |-|-|-|-|-|
 | seed | Yes | number \| string | undefined | The seed value of the generator. |
 
+### Static Methods
+#### Converts a string to seed.
+
+```typescript
+NumberGenerator.stringToSeed(str: string)
+```
+
+| Parameter | Optional | Type | Default | Description |
+|-|-|-|-|-|
+| str | No | string | - | The string to be converted. |
+
+| Return Type | Description |
+|-|-|
+| number | The seed value. |
+
 ### Methods
 
 #### Generates a pseudorandom number within the specified range.
@@ -112,6 +127,16 @@ recoverState(stateCode: string)
 | Parameter | Optional | Type | Default | Description |
 |-|-|-|-|-|
 | stateCode | No | string | - | The state code of the generator. |
+
+#### Sets the seed of the generator.
+
+```typescript
+setSeed(seed: number | string)
+```
+
+| Parameter | Optional | Type | Default | Description |
+|-|-|-|-|-|
+| seed | No | number \| string | - | The seed value of the generator. |
 
 ## 🤝 Contributing
 Contributions are welcome! If you find a bug or have a feature request, please open an issue. If you want to contribute code, please fork the repository and submit a pull request.

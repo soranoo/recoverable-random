@@ -3,23 +3,17 @@
  * The generator can be initialized with a seed value, and its state can be recovered by providing a state code.
  */
 export default class NumberGenerator {
-    private seed: number;
-    private state: number;
+    private seed: number = Date.now();
+    private state: number = this.seed;
 
     /**
      * Creates a new instance of the `NumberGenerator` class with the specified seed value.
      * @param seed - (optional) The seed value for the generator, which can be either a number or a string.
      */
     constructor(seed?: number | string) {
-        if (!seed)
-            seed = Date.now();
-
-        if (typeof seed === "string") {
-            this.seed = this.stringToSeed(seed);
-        } else {
-            this.seed = seed;
+        if (seed) {
+            this.setSeed(seed);
         }
-        this.state = this.seed;
     }
 
     /**
@@ -27,7 +21,7 @@ export default class NumberGenerator {
      * @param str - The input string to convert.
      * @returns - The resulting seed value.
      */
-    private stringToSeed(str: string): number {
+    static stringToSeed(str: string): number {
         let seed = 0;
         for (let i = 0; i < str.length; i++) {
             seed += str.charCodeAt(i);
@@ -76,6 +70,21 @@ export default class NumberGenerator {
     public recoverState(stateCode: string): void {
         this.state = parseInt(stateCode);
         if (isNaN(this.state))
-            this.state = this.stringToSeed(stateCode);
+            this.state = NumberGenerator.stringToSeed(stateCode);
+    }
+
+    /**
+     * Sets the seed value of the generator, which resets the state to the seed value.
+     * @param seed - The new seed value for the generator, which can be either a number or a string.
+     */
+    public setSeed(seed: number | string): void {
+        if (typeof seed === "string") {
+            this.seed = NumberGenerator.stringToSeed(seed);
+        } else if (typeof seed === "number") {
+            this.seed = seed;
+        } else {
+            throw new Error("Invalid seed value");
+        }
+        this.state = this.seed;
     }
 }
