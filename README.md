@@ -1,6 +1,8 @@
 # recoverable-random
 ![Tests](https://github.com/soranoo/recoverable-random/actions/workflows/auto_test.yml/badge.svg) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)&nbsp;&nbsp;&nbsp;[![Donation](https://img.shields.io/static/v1?label=Donation&message=❤️&style=social)](https://github.com/soranoo/Donation)
 
+[![npm version](https://img.shields.io/npm/v/recoverable-random?color=red&style=flat)](https://www.npmjs.com/package/recoverable-random) [![npm downloads](https://img.shields.io/npm/dt/recoverable-random?color=blue&style=flat)](https://www.npmjs.com/package/recoverable-random)
+
 A recoverable number generator that generates pseudorandom integer or floating-point numbers within a given range.
 
 ## 🗝️ Features

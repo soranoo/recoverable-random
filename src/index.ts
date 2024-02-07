@@ -1,3 +1,5 @@
+import { generateShortNumericHash } from "./utils";
+
 /**
  * A recoverable number generator that generates pseudorandom integer or floating-point numbers within a given range.
  * The generator can be initialized with a seed value, and its state can be recovered by providing a state code.
@@ -22,11 +24,8 @@ export default class NumberGenerator {
      * @returns - The resulting seed value.
      */
     static stringToSeed(str: string): number {
-        let seed = 0;
-        for (let i = 0; i < str.length; i++) {
-            seed += str.charCodeAt(i);
-        }
-        return seed;
+        let seed = generateShortNumericHash(str);
+        return parseInt(seed);
     }
 
     /**
@@ -69,8 +68,9 @@ export default class NumberGenerator {
      */
     public recoverState(stateCode: string): void {
         this.state = parseInt(stateCode);
-        if (isNaN(this.state))
+        if (isNaN(this.state)) {
             this.state = NumberGenerator.stringToSeed(stateCode);
+        }
     }
 
     /**
